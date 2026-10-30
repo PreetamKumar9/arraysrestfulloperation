@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin-left:50px;
+        }
+        form{
+            margin-left: 70px;
+        }
+        
+        input{
+            width: 100%;
+        }
+        
+        button{
+            /* width: 100%; */
+            margin-top:20px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Profile</h1>
+            <form action="/profile/<%=id%>/edit?_method=PATCH" method="post">
+        
+
+        <div class="username">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="<%= username%>">
+        </div>
+        <div class="displayname">
+            <label for="dname">Displayname</label>
+            <input type="text" id="dname" name="displayname" value="<%= displayname%>">
+        </div>
+        <div class="bio">
+            <label for="bio">Bio</label>
+            <input type="text" id="bio" name="bio" value="<%= bio%>">
+        </div>
+        <div class="targetAudience">
+            <label for="ta">TargetAudience</label>
+            <input type="text" id="ta" name="targetAudience" value="<%= targetAudience%>">
+        </div>
+        <div class="profileImageUrl">
+            <label for="profileImageUrl">profileImageUrl</label>
+            <input type="text" id="profileImageUrl" name="profileImageUrl" value="<%=profileImageUrl%>">
+        </div>
+
+        
+
+
+        
+        <button>submit</button>
+
+        
+
+    </form>
+    
+</body>
+</html>

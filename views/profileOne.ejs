@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            margin-left: 20px;
+        }
+
+        .profile {
+            width: 100%;
+            position: relative;
+            margin: 20px;
+            height: 150px;
+
+        }
+
+        .profile .img1 {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        .bio {
+            position: absolute;
+            inset: 0px;
+            left: 140px;
+            /* top: 50px; */
+
+        }
+
+        .dname {
+            margin-bottom: 5px;
+        }
+
+        .btns {
+            display: flex;
+            margin-top: 4px;
+            gap: 40px;
+        }
+
+        .btns .edit,.delete {
+            width: 70px;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+        }
+
+        .bio {
+            /* margin-top:15px ; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .username {
+            left: 0px;
+            position: absolute;
+            inset: 0;
+            top: 0px;
+            /* text-align: center; */
+        }
+
+        .img1{
+            position: absolute;
+            top: 25px;
+            left: 10px;
+        }
+        .img2{
+            width: 200px;
+            height:100px;
+            border-radius: 20px;
+        }
+        .like span,.count span{
+            display: inline-block;
+            background-color: black;
+            color: gold;
+            padding: 8px;
+            border-radius: 30px;
+            margin-top: 10px;
+        }
+        .post{
+            /* border: 2px solid red; */
+            margin-bottom: 20px;
+        }
+        .allpro{
+            /* border: none; */
+            background-color: black;
+            position: absolute;
+            right: 10px;
+            top:10px;
+            border-radius: 50px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/profile" class="allpro">All Profile</a>
+     
+    <div class="profile">
+        <img src=<%=profileImageUrl %> alt="" class="img1">
+
+        <p class="username">@<%= username %>
+        </p>
+
+        <div class="bio">
+            <!-- <h5>Bio</h5> -->
+            <p class="dname">
+                <%= displayname %>
+            </p>
+
+            <p>
+                <%= bio %>
+            </p>
+            <p>
+                <%= targetAudience %>
+            </p>
+            <div class="btns">
+                <button class="edit" style="background-color: black;"><a href="/profile/<%=id%>/edit" style="color: white;text-decoration: none;">Edit</a></button>
+
+                <form action="/profile/<%= id %>?_method=DELETE" method="post">
+                <button class="delete">Delete</button>
+            </form>
+        </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
